@@ -12,7 +12,7 @@ export default function HomePage({ homePageNav, setHomePageNav }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/category/" +
+          "http://35.200.144.243:3000/category/" +
           userName,
           {
             method: "GET",
@@ -28,11 +28,7 @@ export default function HomePage({ homePageNav, setHomePageNav }) {
             setCategory([]);
             return;
           }
-          const uniqueCategoryNames = new Set();
-          data.forEach(obj => {
-            uniqueCategoryNames.add(obj.category);
-          });
-          setCategory(Array.from(uniqueCategoryNames));
+          setCategory(data[0].categoryList);
           setErr(false);
         } else {
           console.error("Failed to send data.");

@@ -9,7 +9,7 @@ export default function Search() {
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/data/" +
+        "http://35.200.144.243:3000/data/" +
           inputRef.current.value,
         {
           // Update the URL

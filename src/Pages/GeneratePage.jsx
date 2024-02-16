@@ -49,7 +49,7 @@ export default function GeneratePage({ category, setHomePageNav }) {
     console.log(quantity);
 
     try {
-      const response = await fetch("http://localhost:3000/data", {
+      const response = await fetch("http://35.200.144.243:3000/data", {
         // Update the URL
         method: "POST",
         headers: {
@@ -159,6 +159,7 @@ export default function GeneratePage({ category, setHomePageNav }) {
           className="text-black p-3 border-black border-2 rounded-sm"
           type="number"
           placeholder="Enter UIDs Quantity"
+          max="10"
           onChange={(e) => setQuantity(e.target.value)}
           required
         ></input>
