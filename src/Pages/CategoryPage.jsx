@@ -12,7 +12,7 @@ export default function CategoryPage({
 
     updatedCategory.splice(index, 1);
     try {
-      const response = await fetch("http://35.200.144.243:3000/deleteCategory", {
+      const response = await fetch("http://localhost:3000/deleteCategory", {
         // Update the URL
         method: "POST",
         headers: {
@@ -38,7 +38,7 @@ export default function CategoryPage({
 
   const handleAdd = async () => {
     try {
-      const response = await fetch("http://35.200.144.243:3000/categoryList", {
+      const response = await fetch("http://localhost:3000/categoryList", {
         // Update the URL
         method: "POST",
         headers: {

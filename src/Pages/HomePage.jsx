@@ -12,7 +12,7 @@ export default function HomePage({ homePageNav, setHomePageNav }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://35.200.144.243:3000/category/" +
+          "http://localhost:3000/category/" +
           userName,
           {
             method: "GET",
