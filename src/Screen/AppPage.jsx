@@ -123,7 +123,7 @@ export default function AppPage() {
     }, [user]);
 
     return (
-        <div className='bg-gray-100 h-screen'>
+        <div className='bg-gray-100'>
         <nav className='bg-white px-[8rem] py-[0.5em] flex flex-col sm:flex-row justify-between items-center'>
             <h1 className='text-[1.5rem]'>BRAND PROOF</h1>
             <div className='flex gap-2'>

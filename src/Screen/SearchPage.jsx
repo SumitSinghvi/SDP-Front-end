@@ -54,15 +54,15 @@ export default function SearchPage() {
             <button type='submit' className='bg-gray-300 rounded-sm w-1/2'>Submit</button>
           </form>
           {Object.keys(displayData).length != 0 && err == false && (
-              <div>
-                <h1>Original</h1>
-                <h1>Title: {displayData.Data.title}</h1>
-                <h1>Description: {displayData.Data.description}</h1>
+              <div className='flex flex-col justify-center mt-6'>
+                <h1 className='text-green-500 font-bold font-sans'>Original</h1>
+                <h1 className='text-blue-500 font-sans'>Title: {displayData.Data.title}</h1>
+                <h1 className='text-blue-500 font-sans'>Description: {displayData.Data.description}</h1>
               </div>
           )}
           {console.log(displayData)}
           {displayData.err == 'Not Found' && (
-            <div>Not Found</div>
+            <div className='text-red-600 text-center mt-[2rem] font-bold'>Wrong ID</div>
           )}
         </div>
       </div>
