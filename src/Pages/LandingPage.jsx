@@ -26,7 +26,7 @@ export default function LandingPage() {
         };
     
         // Send the payload to the Discord webhook
-        fetch("https://discord.com/api/webhooks/1213153115654721616/_wTU-DSh7N9mXZNVNzh2WPRxncocSgnd96b7GaNjou-fVz6IXS0Wj2T4DqMkWcJ9MjVc", {
+        fetch(import.meta.env.VITE_DISCORD_WEBHOOK, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

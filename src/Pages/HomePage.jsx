@@ -12,7 +12,7 @@ export default function HomePage({ homePageNav, setHomePageNav }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/category/" +
+          import.meta.env.VITE_BASEURL + "/category/" +
           userName,
           {
             method: "GET",

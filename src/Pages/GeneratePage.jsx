@@ -49,7 +49,7 @@ export default function GeneratePage({ category, setHomePageNav }) {
     console.log(quantity);
 
     try {
-      const response = await fetch("http://localhost:3000/data", {
+      const response = await fetch(import.meta.env.VITE_BASEURL + "/data", {
         // Update the URL
         method: "POST",
         headers: {

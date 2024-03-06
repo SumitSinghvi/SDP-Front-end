@@ -17,11 +17,10 @@ export default function LoginPage() {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/login', { username: user, password });
+            const response = await axios.post(import.meta.env.VITE_BASEURL + '/login', { username: user, password });
             localStorage.setItem('username',response.data.username)
             navigate('/App');
             // You may add further logic here, such as redirecting the user upon successful login

@@ -23,7 +23,7 @@ export default function AppPage() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/data', formData);
+            const response = await axios.post(import.meta.env.VITE_BASEURL + '/data', formData);
             console.log(response.data); // Handle response accordingly
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -101,7 +101,7 @@ export default function AppPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/category/${user}`);
+                const response = await axios.get(import.meta.env.VITE_BASEURL + `/category/${user}`);
                 if (response.status === 200) {
                     const data = await response.data;
                     setUserdata(data);

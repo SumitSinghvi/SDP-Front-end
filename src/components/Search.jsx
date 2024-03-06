@@ -9,7 +9,7 @@ export default function Search() {
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/data/" +
+        import.meta.env.VITE_BASEURL + "/data/" +
           inputRef.current.value,
         {
           // Update the URL

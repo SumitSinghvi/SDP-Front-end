@@ -48,7 +48,7 @@ const DynamicForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/data",
+        import.meta.env.VITE_BASEURL + "/data",
         {
           // Update the URL
           method: "POST",
