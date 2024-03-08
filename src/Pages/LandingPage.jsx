@@ -61,7 +61,7 @@ export default function LandingPage() {
                     <img src="protect-from-theif.png" alt="theif" className='rounded-lg'/>
                 </div>
             </section>
-            <section className='px-[150px] py-[4rem] flex flex-col'>
+            <section id='benefits' className='px-[150px] py-[4rem] flex flex-col'>
                 <h1 className='text-[1.25rem] mb-[3.5rem]'>Experience Cutting-Edge Anti-Counterfeiting Innovation</h1>
                     <div className='flex'>
                         <div>

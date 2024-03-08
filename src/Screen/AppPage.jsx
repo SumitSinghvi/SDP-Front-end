@@ -125,7 +125,7 @@ export default function AppPage() {
     return (
         <div className='bg-gray-100'>
         <nav className='bg-white px-[8rem] py-[0.5em] flex flex-col sm:flex-row justify-between items-center'>
-            <h1 className='text-[1.5rem]'>BRAND PROOF</h1>
+            <h1 className='text-[1.5rem]'>TagZooper</h1>
             <div className='flex gap-2'>
                 <GoPerson className='text-4xl'/>
                 <div>
@@ -135,8 +135,8 @@ export default function AppPage() {
             </div>
         </nav>
         <section className='bg-white border-b-2 shadow-lg px-[8rem] py-[0.5em] flex flex-col sm:flex-row gap-[2rem]'>
-            <h1 onClick={() => setActive('Generate')} className={`${active === 'Generate' ? 'border-gray-400 border-b-2' : ''}`}>Generate UIDs</h1>
-            <h1 onClick={() => setActive('Files')} className={`${active === 'Files' ? 'border-gray-400 border-b-2' : ''}`}>Files</h1>
+            <h1 onClick={() => setActive('Generate')} className={`${active === 'Generate' ? 'border-gray-400 border-b-2' : ''} cursor-pointer`}>Generate UIDs</h1>
+            <h1 onClick={() => setActive('Files')} className={`${active === 'Files' ? 'border-gray-400 border-b-2' : ''} cursor-pointer`}>Files</h1>
         </section>
         {active == 'Generate' && (
         <section className='bg-gray-100 flex justify-center items-center py-[2rem]'>
