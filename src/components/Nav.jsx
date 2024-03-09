@@ -30,19 +30,37 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
+    // <div>
+    //   <nav className='bg-gradient-to-r from-[#eedfaf] to-[#c49d28] py-[1.5em] px-[1.5rem] sm:px-[150px] flex flex-col sm:flex-row justify-between items-center'>
+    //     <Link to='/'>
+    //       <h2 className='text-[1.5rem] text-[#856e28]'>TagZooper</h2>
+    //     </Link>
+    //     <div className='flex gap-4 mt-4 sm:mt-0'>
+    //       <a href='#benefits' className='mr-4 hover:text-[#393fbe] hover:underline'>Benefits</a>
+    //       <Link to='/login'>
+    //         <h3 className='mr-4 hover:text-[#393fbe] hover:underline'>Sign in</h3>
+    //       </Link>
+    //     </div>
+    //     <div className='flex gap-4 mt-4 sm:mt-0'>
+    //       <a href='#contact'><h3 className='hover:text-[#f9f4f9]'>Contact us</h3></a>
+    //     </div>
+    //   </nav>
+    // </div>
     <div>
-      <nav className='bg-gradient-to-r from-[#eedfaf] to-[#c49d28] py-[1.5em] px-[1.5rem] sm:px-[150px] flex flex-col sm:flex-row justify-between items-center'>
-        <Link to='/'>
-          <h2 className='text-[1.5rem] text-[#856e28]'>TagZooper</h2>
+      <nav className="bg-gradient-to-r from-[#eedfaf] to-[#c49d28] py-4 px-6 sm:px-24 flex flex-col sm:flex-row justify-between items-center">
+        <Link to="/" className="text-2xl text-[#ab8c30] font-semibold">
+          TagZooper
         </Link>
-        <div className='flex gap-4 mt-4 sm:mt-0'>
-          <a href='#benefits' className='mr-4 hover:text-[#393fbe] hover:underline'>Benefits</a>
-          <Link to='/login'>
-            <h3 className='mr-4 hover:text-[#393fbe] hover:underline'>Sign in</h3>
+        <div className="flex gap-4 mt-4 sm:mt-0">
+          <a href="#benefits" className="sm:inline text-base hover:text-[#393fbe] hover:underline">
+            Benefits
+          </a>
+          <Link to="/login" className="text-base hover:text-[#393fbe] hover:underline">
+            Sign in
           </Link>
-        </div>
-        <div className='flex gap-4 mt-4 sm:mt-0'>
-          <a href='#contact'><h3 className='hover:text-[#f9f4f9]'>Contact us</h3></a>
+          <a href="#contact" className="text-base hover:text-[#393fbe] hover:underline">
+            Contact us
+          </a>
         </div>
       </nav>
     </div>

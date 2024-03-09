@@ -124,83 +124,113 @@ export default function AppPage() {
 
     return (
         <div className='bg-gray-100'>
-        <nav className='bg-white px-[8rem] py-[0.5em] flex flex-col sm:flex-row justify-between items-center'>
-            <h1 className='text-[1.5rem]'>TagZooper</h1>
-            <div className='flex gap-2'>
-                <GoPerson className='text-4xl'/>
+        <nav className="bg-white px-8 sm:px-16 py-2 flex flex-col sm:flex-row justify-between items-center">
+            <h1 className="text-2xl sm:text-3xl font-bold">TagZooper</h1>
+            <div className="flex items-center gap-2 mt-2 sm:mt-0">
+                <GoPerson className="text-4xl"/>
                 <div>
-                    <p className='text-xs capitalize'>{user}</p>
-                    <button onClick={handleLogout} className='text-xs text-green-600 border-b'>SIGN OUT</button>
+                    <p className="text-sm sm:text-xs capitalize">{user}</p>
+                    <button onClick={handleLogout} className="text-sm text-green-600 border-b border-transparent hover:border-green-600 transition duration-300 ease-in-out focus:outline-none focus:border-green-600">SIGN OUT</button>
                 </div>
             </div>
         </nav>
-        <section className='bg-white border-b-2 shadow-lg px-[8rem] py-[0.5em] flex flex-col sm:flex-row gap-[2rem]'>
-            <h1 onClick={() => setActive('Generate')} className={`${active === 'Generate' ? 'border-gray-400 border-b-2' : ''} cursor-pointer`}>Generate UIDs</h1>
-            <h1 onClick={() => setActive('Files')} className={`${active === 'Files' ? 'border-gray-400 border-b-2' : ''} cursor-pointer`}>Files</h1>
+        <section className="bg-white border-b-2 shadow-lg px-8 sm:px-16 py-2 flex flex-col sm:flex-row gap-8">
+            <h1 onClick={() => setActive('Generate')} className={`text-lg sm:text-xl cursor-pointer ${active === 'Generate' ? 'border-b-2 border-gray-400' : ''}`}>Generate UIDs</h1>
+            <h1 onClick={() => setActive('Files')} className={`text-lg sm:text-xl cursor-pointer ${active === 'Files' ? 'border-b-2 border-gray-400' : ''}`}>Files</h1>
         </section>
+
         {active == 'Generate' && (
-        <section className='bg-gray-100 flex justify-center items-center py-[2rem]'>
-            <div className='w-1/2 bg-white px-[2rem] py-[3rem] space-y-4 rounded-md'>
-                <h1 className='text-[1.5rem] font-semibold'>Create a file</h1>
-                <div className='flex justify-between items-center'>
-                    <p>New Product</p>
-                    <button onClick={handleSubmit} className='rounded-full bg-black text-white text-[0.75rem] py-[0.5rem] px-[1rem]'>Save</button>
+        <section className="bg-gray-100 flex justify-center items-center py-8">
+            <div className="w-full md:w-1/2 bg-white px-8 py-6 space-y-4 rounded-md">
+                <h1 className="text-xl md:text-2xl font-semibold">Create a file</h1>
+                <div className="flex flex-row justify-between items-center">
+                <p>New Product</p>
+                <button onClick={handleSubmit} className="md:ml-2 rounded-full bg-black text-white text-xs md:text-sm py-2 px-4">
+                    Save
+                </button>
                 </div>
-                <form className='space-y-6'>
-                    <div className='flex justify-between'>
-                        <label>Title</label>
-                        <input
-                        required
-                        type="text"
-                        className='border outline-none'
-                        name="title"
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <div className='flex justify-between'>
-                        <label>Description</label>
-                        <textarea 
-                        required 
-                        className='border outline-none h-32 resize-none'
-                        name="description" 
-                        onChange={handleChange}
-                        ></textarea>
-                    </div>
-                    <div className='flex justify-between'>
-                        <label>Quantity</label>
-                        <input 
-                        required 
-                        type="number" 
-                        className='border outline-none ' 
-                        name="quantity" 
-                        onChange={handleChange}
-                        />
-                    </div>
+                <form className="space-y-6">
+                <div className="flex md:flex-row flex-col justify-between gap-2">
+                    <label>Title</label>
+                    <input
+                    required
+                    type="text"
+                    className="border outline-none px-2 md:py-2 w-full md:w-2/3"
+                    name="title"
+                    onChange={handleChange}
+                    />
+                </div>
+                <div className="flex md:flex-row flex-col justify-between gap-2">
+                    <label>Description</label>
+                    <textarea
+                    required
+                    className="border outline-none h-32 resize-none px-2 md:py-2 w-full md:w-2/3"
+                    name="description"
+                    onChange={handleChange}
+                    ></textarea>
+                </div>
+                <div className="flex md:flex-row flex-col justify-between gap-2">
+                    <label>Quantity</label>
+                    <input
+                    required
+                    type="number"
+                    className="border outline-none px-2 md:py-2 w-full md:w-2/3"
+                    name="quantity"
+                    onChange={handleChange}
+                    />
+                </div>
                 </form>
             </div>
-        </section>
+            </section>
         )}
         {active == 'Files' && (
-        <section className='flex justify-center py-[2rem]'>
-            <div className='w-1/2 bg-white px-[2rem] py-[3rem] space-y-4 rounded-md'>
-                <h1 className='text-[1.5rem] font-semibold'>Files</h1>
-                <div className='flex justify-between items-center'>
-                    <p>Products</p>
-                    <button onClick={() => setActive('Generate')} className='rounded-full bg-black text-white text-[0.75rem] py-[0.5rem] px-[1rem]'>New Product</button>
+        // <section className='flex justify-center py-[2rem]'>
+        //     <div className='w-1/2 bg-white px-[2rem] py-[3rem] space-y-4 rounded-md'>
+        //         <h1 className='text-[1.5rem] font-semibold'>Files</h1>
+        //         <div className='flex justify-between items-center'>
+        //             <p>Products</p>
+        //             <button onClick={() => setActive('Generate')} className='rounded-full bg-black text-white text-[0.75rem] py-[0.5rem] px-[1rem]'>New Product</button>
+        //         </div>
+        //         {userData.length == 0 && <div className='flex flex-col justify-center items-center py-[1rem]'>
+        //             <h1 className='text-gray-600'>empty</h1>
+        //         </div>}
+        //         {userData.length != 0 && (
+        //             <div>
+        //                 {Object.keys(separateData).map((key) => (
+        //                     <div key={key}>
+        //                         <div className='flex flex-col w-[3/4]'>
+        //                             <h1>Title: <span className='text-gray-500'>{separateData[key][0].Data.title}</span></h1>
+        //                             <h1>Description: <span className='text-gray-500'>{separateData[key][0].Data.description}</span></h1>
+        //                             <h1>Date: <span className='text-gray-500'>{key.substring(0,10)}, {key.substring(11,18)}</span></h1>
+        //                         </div>
+        //                         <button className='bg-green-600 rounded-sm my-4 px-[1.5rem] py-[0.25rem]' onClick={() => handleDownload(key)}>Download Excel</button>
+        //                     </div>
+        //                 ))}
+        //             </div>
+        //         )}
+        //     </div>
+        // </section>
+        <section className='flex justify-center py-8'>
+            <div className='w-full md:w-3/4 lg:w-1/2 xl:w-2/3 bg-white px-4 md:px-8 py-6 md:py-12 space-y-4 rounded-md'>
+                <h1 className='text-2xl font-semibold text-center'>Files</h1>
+                <div className='flex flex-row justify-between items-center'>
+                    <p className='text-center md:text-left'>Products</p>
+                    <button onClick={() => setActive('Generate')} className='bg-black text-white text-sm py-2 px-4 rounded-full mt-4 md:mt-0'>New Product</button>
                 </div>
-                {userData.length == 0 && <div className='flex flex-col justify-center items-center py-[1rem]'>
-                    <h1 className='text-gray-600'>empty</h1>
-                </div>}
-                {userData.length != 0 && (
+                {userData.length === 0 ? (
+                    <div className='flex flex-col justify-center items-center py-4'>
+                        <h1 className='text-gray-600'>Empty</h1>
+                    </div>
+                ) : (
                     <div>
                         {Object.keys(separateData).map((key) => (
-                            <div key={key}>
-                                <div className='flex flex-col w-[3/4]'>
-                                    <h1>Title: <span className='text-gray-500'>{separateData[key][0].Data.title}</span></h1>
-                                    <h1>Description: <span className='text-gray-500'>{separateData[key][0].Data.description}</span></h1>
-                                    <h1>Date: <span className='text-gray-500'>{key.substring(0,10)}, {key.substring(11,18)}</span></h1>
+                            <div key={key} className='border-b border-gray-300 pb-4'>
+                                <div className='flex flex-col'>
+                                    <h1 className='text-lg font-semibold'>Title: <span className='text-gray-500'>{separateData[key][0].Data.title}</span></h1>
+                                    <h1 className='text-lg font-semibold'>Description: <span className='text-gray-500'>{separateData[key][0].Data.description}</span></h1>
+                                    <h1 className='text-lg font-semibold'>Date: <span className='text-gray-500'>{key.substring(0,10)}, {key.substring(11,18)}</span></h1>
                                 </div>
-                                <button className='bg-green-600 rounded-sm my-4 px-[1.5rem] py-[0.25rem]' onClick={() => handleDownload(key)}>Download Excel</button>
+                                <button className='bg-green-600 text-white text-sm py-1 px-4 rounded-md mt-4' onClick={() => handleDownload(key)}>Download Excel</button>
                             </div>
                         ))}
                     </div>
