@@ -193,10 +193,6 @@ export default function AppPage() {
                 </div>}
                 {userData.length != 0 && (
                     <div>
-                        {/* <div className='flex justify-around'>
-                            <p>Title</p>
-                            <p>Description</p>
-                        </div> */}
                         {Object.keys(separateData).map((key) => (
                             <div key={key}>
                                 <div className='flex flex-col w-[3/4]'>

@@ -3,6 +3,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
     const [user, setUser] = useState('');
@@ -31,7 +32,13 @@ export default function LoginPage() {
 
     return (
         <>
-            <Nav />
+            <div>
+                <nav className='bg-gradient-to-r from-[#eedfaf] to-[#c49d28] py-[1.5em] px-[1.5rem] sm:px-[150px] flex justify-center'>
+                    <Link to='/'>
+                    <h2 className='text-[1.5rem] text-[#856e28]'>TagZooper</h2>
+                    </Link>
+                </nav>
+            </div>
             <div className="flex items-center justify-center bg-gray-50 py-[4rem] px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8">
                     <div>

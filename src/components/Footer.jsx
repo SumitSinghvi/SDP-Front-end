@@ -50,7 +50,7 @@ export default function Footer() {
           <h1 className="text-2xl font-bold mb-4">Get in touch</h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2">
-          <div>
+          <div className='mb-4'>
             <div className="flex items-center mb-4">
               <MdEmail className="text-white mr-2" />
               <p className="text-white">Email: sumitjaindev@gmail.com</p>
@@ -61,13 +61,13 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div className="flex items-center mb-4">
-              <p className="text-white mr-2">Twitter: SumitJainDev</p>
+            <div className="flex items-center mb-4 gap-2">
               <FaTwitter className="text-white" />
+              <p className="text-white mr-2">Twitter: SumitJainDev</p>
             </div>
-            <div className="flex items-center">
-              <p className="text-white mr-2">LinkedIn: SumitSinghvi</p>
+            <div className="flex items-center gap-2">
               <FaLinkedin className="text-white" />
+              <p className="text-white mr-2">LinkedIn: SumitSinghvi</p>
             </div>
           </div>
         </div>
