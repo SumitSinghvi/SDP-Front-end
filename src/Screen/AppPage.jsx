@@ -43,9 +43,10 @@ export default function AppPage() {
     }
 
     // Initialize an empty object to store lists for separate dates
-    const separateLists = {};
     
     const handleCreateSeperateData = (data) => {
+        const separateLists = {};
+        console.log("data",data)
     // Iterate through the array of objects
     data.forEach(obj => {
         // Extract the date and time till minute
@@ -174,6 +175,7 @@ export default function AppPage() {
                     <label>Quantity</label>
                     <input
                     required
+                    max='10'
                     type="number"
                     className="border outline-none px-2 md:py-2 w-full md:w-2/3"
                     name="quantity"
