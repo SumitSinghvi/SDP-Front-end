@@ -14,7 +14,7 @@ export default function AppPage() {
         quantity: 1,
         user : localStorage.getItem('username') || ''
     });
-    const [active, setActive] = useState('Generate');
+    const [active, setActive] = useState('Files');
     const navigate = useNavigate();
     if(!user){
         location.href = '/'
@@ -25,6 +25,7 @@ export default function AppPage() {
         try {
             const response = await axios.post(import.meta.env.VITE_BASEURL + '/data', formData);
             console.log(response.data); // Handle response accordingly
+            location.reload();
         } catch (error) {
             console.error('Error submitting form:', error);
         }
@@ -184,32 +185,6 @@ export default function AppPage() {
             </section>
         )}
         {active == 'Files' && (
-        // <section className='flex justify-center py-[2rem]'>
-        //     <div className='w-1/2 bg-white px-[2rem] py-[3rem] space-y-4 rounded-md'>
-        //         <h1 className='text-[1.5rem] font-semibold'>Files</h1>
-        //         <div className='flex justify-between items-center'>
-        //             <p>Products</p>
-        //             <button onClick={() => setActive('Generate')} className='rounded-full bg-black text-white text-[0.75rem] py-[0.5rem] px-[1rem]'>New Product</button>
-        //         </div>
-        //         {userData.length == 0 && <div className='flex flex-col justify-center items-center py-[1rem]'>
-        //             <h1 className='text-gray-600'>empty</h1>
-        //         </div>}
-        //         {userData.length != 0 && (
-        //             <div>
-        //                 {Object.keys(separateData).map((key) => (
-        //                     <div key={key}>
-        //                         <div className='flex flex-col w-[3/4]'>
-        //                             <h1>Title: <span className='text-gray-500'>{separateData[key][0].Data.title}</span></h1>
-        //                             <h1>Description: <span className='text-gray-500'>{separateData[key][0].Data.description}</span></h1>
-        //                             <h1>Date: <span className='text-gray-500'>{key.substring(0,10)}, {key.substring(11,18)}</span></h1>
-        //                         </div>
-        //                         <button className='bg-green-600 rounded-sm my-4 px-[1.5rem] py-[0.25rem]' onClick={() => handleDownload(key)}>Download Excel</button>
-        //                     </div>
-        //                 ))}
-        //             </div>
-        //         )}
-        //     </div>
-        // </section>
         <section className='flex justify-center py-8'>
             <div className='w-full md:w-3/4 lg:w-1/2 xl:w-2/3 bg-white px-4 md:px-8 py-6 md:py-12 space-y-4 rounded-md'>
                 <h1 className='text-2xl font-semibold text-center'>Files</h1>

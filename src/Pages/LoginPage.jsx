@@ -75,7 +75,6 @@ export default function LoginPage() {
                                 />
                             </div>
                         </div>
-
                         <div>
                             <button
                                 type="submit"
@@ -83,6 +82,9 @@ export default function LoginPage() {
                             >
                                 Sign in
                             </button>
+                        </div>
+                        <div className='flex justify-end'>
+                            <button className='text-white rounded-md p-1 text-sm bg-red-500'>change password</button>
                         </div>
                         {message && <p>{message}</p>}
                     </form>
